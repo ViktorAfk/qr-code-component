@@ -25,7 +25,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/ViktorAfk/qr-code-component)
-- Live Site URL: [Add live site URL here](https://daily-advice-generator-app.netlify.app/)
+- Live Site URL: [Add live site URL here](https://viktorafk.github.io/qr-code-component/)
 
 ## My process
 
