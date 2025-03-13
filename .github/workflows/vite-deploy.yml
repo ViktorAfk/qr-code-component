@@ -38,7 +38,9 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
+        run: |
+          npm install -g pnpm
+          pnpm --version  # Verify installation
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -52,8 +54,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload dist folder
-          path: './dist'
+          path: './dist' # Upload dist folder
 
       - name: Deploy to GitHub Pages
         id: deployment
