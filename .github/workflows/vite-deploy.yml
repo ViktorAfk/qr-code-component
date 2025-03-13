@@ -28,17 +28,20 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v4
-        - uses: pnpm/action-setup@v4
-            with:
-                version: 9
-          - uses: actions/setup-node@v4
-            with:
-                node-version: 20
-                registry-url: https://registry.npmjs.org
-                cache: pnpm
-          - name: Install Dependencies
-            run: pnpm i --frozen-lockfile
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9  # Correctly indented version number
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
         run: pnpm run build
