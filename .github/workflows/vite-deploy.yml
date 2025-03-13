@@ -39,7 +39,8 @@ jobs:
 
       - name: Install pnpm
         run: |
-          npm install -g pnpm
+          corepack enable
+          corepack prepare pnpm@latest --activate
           pnpm --version  # Verify installation
 
       - name: Install dependencies
